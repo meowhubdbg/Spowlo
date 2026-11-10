@@ -323,7 +323,7 @@ object DownloaderUtil {
             onSuccess = { response ->
                 when {
                     response.output.contains("LookupError") -> Result.failure(Throwable("A LookupError occurred. The song wasn't found. Try changing the audio provider."))
-                    response.output.contains("YT-DLP") -> Result.failure(Throwable("An error occurred with yt-dlp while downloading. Please report this issue."))
+                    response.output.contains("YT-DLP") -> Result.failure(Throwable("yt-dlp error: " + response.output.takeLast(600)))
                     response.output.contains("HTTPError") -> Result.failure(Throwable("A HTTPError occurred. Try changing providers."))
                     response.output.contains("ReadTimeout") -> Result.failure(Throwable("A ReadTimeout occurred. Try changing providers."))
                     response.output.contains("ValueError") -> Result.failure(Throwable("A ValueError occurred. Try changing providers."))
