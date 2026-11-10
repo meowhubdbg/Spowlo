@@ -248,6 +248,7 @@
     <string name="la_az" translatable="false">Azərbaycanca</string>
     <string name="la_nn" translatable="false">Nynorsk</string>
     <string name="la_pa" translatable="false">ਪੰਜਾਬੀ</string>
+    <string name="la_iw" translatable="false">עברית</string>
 
     <string name="update_available">A new update is available</string>
     <string name="dont_filter_results">Don\'t filter results</string>
