@@ -42,42 +42,17 @@ jobs:
             echo "See commits for details." > release_notes.md
           fi
 
-      - name: Decode Keystore
-        env:
-          ENCODED_STRING: ${{ secrets.KEYSTORE_BASE64 }}
-        run: |
-          echo $ENCODED_STRING | base64 -di > app/release.jks
-
-      - name: Create keystore.properties
-        env:
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
-        run: |
-          echo "storeFile=release.jks" > keystore.properties
-          echo "keyAlias=$KEY_ALIAS" >> keystore.properties
-          echo "storePassword=$STORE_PASSWORD" >> keystore.properties
-          echo "keyPassword=$KEY_PASSWORD" >> keystore.properties
-
-      - name: Create local.properties
-        env:
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        run: |
-          echo "CLIENT_ID=$CLIENT_ID" > local.properties
-          echo "CLIENT_SECRET=$CLIENT_SECRET" >> local.properties
-
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build Release APK
-        run: ./gradlew assembleRelease --stacktrace
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: spowlo-release-apk
-          path: app/build/outputs/apk/release/*.apk
+          path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
           retention-days: 14
 
