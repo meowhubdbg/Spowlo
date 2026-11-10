@@ -118,6 +118,13 @@ fun AboutPage(onBackPressed: () -> Unit) {
                     logoUrl = "https://github.com/SomeRedstone.png",
                     githubUrl = "https://github.com/SomeRedstone"
                 )
+                HeadDeveloperComponent(
+                    modifier = Modifier.padding(top = 12.dp),
+                    name = "Nahmn",
+                    description = "Maintainer of the Kosher-apps fork · Hebrew translation",
+                    logoUrl = "https://github.com/Kosher-apps.png",
+                    githubUrl = "https://github.com/Kosher-apps"
+                )
             }
             // --------------------------
 
