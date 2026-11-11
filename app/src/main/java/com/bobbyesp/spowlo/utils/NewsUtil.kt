@@ -16,7 +16,7 @@ object NewsUtil {
     
     // URL pointing to the raw JSON file in our own fork (upstream still
     // serves the stale Jan 2026 "downloads unavailable" notice).
-    private const val NEWS_URL = "https://raw.githubusercontent.com/Kosher-apps/Spowlo/main/spowlo_news.json"
+    private const val NEWS_URL = "https://raw.githubusercontent.com/meowhubdbg/Spowlo/main/spowlo_news.json"
 
     private val client = OkHttpClient()
     private val jsonFormat = Json { ignoreUnknownKeys = true }
