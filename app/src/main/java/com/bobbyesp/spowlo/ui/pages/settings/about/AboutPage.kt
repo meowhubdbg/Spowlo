@@ -121,9 +121,9 @@ fun AboutPage(onBackPressed: () -> Unit) {
                 HeadDeveloperComponent(
                     modifier = Modifier.padding(top = 12.dp),
                     name = "Nahmn",
-                    description = "Maintainer of the Kosher-apps fork · Hebrew translation",
-                    logoUrl = "https://github.com/Kosher-apps.png",
-                    githubUrl = "https://github.com/Kosher-apps"
+                    description = "Maintainer of the meowhubdbg fork · Hebrew translation",
+                    logoUrl = "https://github.com/meowhubdbg.png",
+                    githubUrl = "https://github.com/meowhubdbg"
                 )
             }
             // --------------------------
